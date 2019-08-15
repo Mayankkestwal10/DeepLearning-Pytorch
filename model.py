@@ -62,10 +62,11 @@ def train(model, trainloader, testloader, criterion, optimizer, epochs=5, print_
                 with torch.no_grad():
                     test_loss, accuracy = validation(model, testloader, criterion)
                     
-                print("Epoch: {}/{}..".format(e+1, epochs),
-                     "Training Loss: {:.3f}..".format(running_loss/len(print_every)),
-                     "Test Loss: {:.3f}..".format(test_loss/len(testloader)),
-                     "Test Accuracy: {:.3f}".format(accuracy/len(testloader)))
+                print("Epoch: {}/{}.. ".format(e+1, epochs),
+                      "Training Loss: {:.3f}.. ".format(running_loss/print_every),
+                      "Test Loss: {:.3f}.. ".format(test_loss/len(testloader)),
+                      "Test Accuracy: {:.3f}".format(accuracy/len(testloader)))
+
                 running_loss = 0
                 
                 model.train()
